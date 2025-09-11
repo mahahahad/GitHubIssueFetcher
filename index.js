@@ -32,7 +32,7 @@ function createCard(item) {
     card.onclick = () => openRepoDialog(item);
     cardTitle.textContent = item.title;
     cardTitle.title = item.title;
-    cardBody.innerHTML = marked.parse(item.body);
+    cardBody.textContent = (item.body);
     card.appendChild(cardTitle);
     card.appendChild(labelWrapper);
     card.appendChild(cardBody);
@@ -62,28 +62,34 @@ function openRepoDialog(repo) {
     const dialog = document.createElement("dialog");
     const repoTitle = document.createElement("h1");
     const repoBodyContainer = document.createElement("div");
-    const repoBody = document.createElement("p");
     const repoButton = document.createElement("button");
 
     overlay.classList.add("overlay");
     repoTitle.classList.add("issue__title");
     repoBodyContainer.classList.add("issue__bodyContainer");
-    repoBody.classList.add("issue__bodyContainer__body");
     repoButton.classList.add("issue__button");
 
     repoTitle.textContent = repo.title;
-    repoBody.innerHTML = marked.parse(repo.body);
+    repoBodyContainer.innerHTML = marked.parse(repo.body);
     repoButton.textContent = "Visit on GitHub";
     repoButton.onclick = () => window.open(repo.html_url, "blank");
 
     overlay.appendChild(dialog);
     dialog.appendChild(repoTitle);
-    repoBodyContainer.appendChild(repoBody);
     dialog.appendChild(repoBodyContainer);
     dialog.appendChild(repoButton);
     document.body.appendChild(overlay);
     dialog.show();
-    overlay.addEventListener("keydown", (e) => { e.key == "Escape" && dialog.close(); document.body.removeChild(overlay) });
+    overlay.addEventListener("keydown", (e) => { if (e.key == "Escape") {
+        dialog.close();
+        document.body.removeChild(overlay)
+    } });
+    overlay.addEventListener("mousedown", (e) => {
+        if (!document.querySelector(".overlay dialog").contains(e.target)) {
+            dialog.close();
+            document.body.removeChild(overlay)
+        }
+    })
 }
 
 function isPageNumValid(pageNum) {

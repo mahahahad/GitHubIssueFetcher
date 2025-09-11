@@ -13,6 +13,10 @@
       href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <title>GitHub Issue Fetcher</title>
   </head>
   <body>
@@ -23,9 +27,15 @@
         /
         <span class="totalPages">33</span>
       </p>
-      <button class="prevPageBtn">Prev</button>
-      <button class="nextPageBtn">Next</button>
       <p class="totalResults"></p>
+      <div class="btnContainer">
+        <button class="prevPageBtn">
+          <span class="material-symbols-outlined"> arrow_back </span>
+        </button>
+        <button class="nextPageBtn">
+          <span class="material-symbols-outlined"> arrow_forward </span>
+        </button>
+      </div>
     </nav>
   </body>
   <script type="module" src="index.js"></script>
