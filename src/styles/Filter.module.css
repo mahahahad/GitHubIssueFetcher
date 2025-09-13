@@ -1,6 +1,31 @@
 .filter {
-    /* background-color: red; */
+    --border-radius: 16px;
     padding: 1rem;
-    border: 1px solid currentColor;
-    flex-grow: 2;
+    flex-grow: 3;
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+/* Background */
+.filter::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-color: currentColor;
+    opacity: 5%;
+    border-radius: var(--border-radius);
+    pointer-events: none;
+}
+
+/* Stroke */
+.filter::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    outline-offset: 2px;
+    outline: 1px solid currentColor;
+    opacity: 20%;
+    border-radius: var(--border-radius);
+    pointer-events: none;
+    /* Add mouse hover interaction to outline here */
 }

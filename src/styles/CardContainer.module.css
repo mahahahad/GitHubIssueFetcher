@@ -1,6 +1,8 @@
 .cardContainer {
-    padding: 1rem;
-    border: 1px solid currentColor;
-    flex-grow: 8;
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: clamp(10rem, 80vw, 100rem);
+    justify-content: center;
+    flex-grow: 6;
 }

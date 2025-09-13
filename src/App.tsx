@@ -7,6 +7,7 @@ function App() {
     display: "flex",
     flexDirection: "row",
     flexGrow: 1,
+    gap: "1rem",
   }
 
   return (

@@ -1,5 +1,10 @@
 .navBar {
-    /* background: red; */
-    border: 1px solid currentColor;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
 }

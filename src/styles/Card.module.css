@@ -1,3 +1,74 @@
 .card {
-    background-color: red;
+    --border-radius: 8px;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: 0px 0px 24px black;
+    width: clamp(20rem, 30vw, 40rem);
+    flex-grow: 1;
+    cursor: pointer;
+    /* For the pseudo-elements */
+    position: relative;
+}
+
+/* Background */
+.card::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-color: currentColor;
+    opacity: 5%;
+    border-radius: var(--border-radius);
+    pointer-events: none;
+}
+
+/* Stroke */
+.card::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    outline-offset: 2px;
+    outline: 1px solid currentColor;
+    opacity: 20%;
+    border-radius: var(--border-radius);
+    pointer-events: none;
+    /* Add mouse hover interaction to outline here */
+}
+
+.card__title {
+    font-size: clamp(1rem, 4vmin, 1.75rem);
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+.card__body {
+    font-size: clamp(0.85rem, 2vmin, 1rem);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    font-family: var(--ff-mono);
+    line-clamp: 4;
+}
+
+.label {
+    font-family: var(--ff-mono);
+    font-size: clamp(0.5rem, 1.5vmin, 0.85rem);
+    border: 1px solid currentColor;
+    display: inline;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+    margin-right: 0.5rem;
+}
+
+.card__labels {
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-block: 0.5rem;
 }
