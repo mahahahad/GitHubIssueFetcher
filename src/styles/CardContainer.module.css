@@ -1,0 +1,6 @@
+.cardContainer {
+    padding: 1rem;
+    border: 1px solid currentColor;
+    flex-grow: 8;
+    height: 100%;
+}

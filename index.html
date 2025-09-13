@@ -1,42 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark light" />
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Inter & Fragment mono font family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
-    <title>GitHub Issue Fetcher</title>
+    <title>Vite + React + TS</title>
   </head>
   <body>
-    <div class="cardContainer"></div>
-    <nav>
-      <p class="pageCount">
-        <span class="currentPage" contenteditable="true">1</span>
-        /
-        <span class="totalPages">33</span>
-      </p>
-      <p class="totalResults"></p>
-      <div class="btnContainer">
-        <button class="prevPageBtn">
-          <span class="material-symbols-outlined"> arrow_back </span>
-        </button>
-        <button class="nextPageBtn">
-          <span class="material-symbols-outlined"> arrow_forward </span>
-        </button>
-      </div>
-    </nav>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
-  <script type="module" src="index.js"></script>
 </html>

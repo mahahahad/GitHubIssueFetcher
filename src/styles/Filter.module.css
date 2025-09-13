@@ -1,0 +1,6 @@
+.filter {
+    /* background-color: red; */
+    padding: 1rem;
+    border: 1px solid currentColor;
+    flex-grow: 2;
+}
