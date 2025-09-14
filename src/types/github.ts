@@ -10,5 +10,14 @@ export interface Issue {
     body: string;
     labels: Label[];
     url: string;
-    repo_url: string;
+    repository_url: string;
+}
+
+export interface Repo {
+    full_name: string,
+    description?: string,
+    language: string,
+    forks: number,
+    stargazers_count: number,
+    html_url: string
 }

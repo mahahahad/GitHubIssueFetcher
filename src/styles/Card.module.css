@@ -67,6 +67,7 @@
 }
 
 .card__labels {
+    margin-top: 0.75rem;
     margin-bottom: 1rem;
     overflow-x: auto;
     overflow-y: hidden;

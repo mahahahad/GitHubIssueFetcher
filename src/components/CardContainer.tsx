@@ -28,7 +28,7 @@ function    CardContainer() {
             {
                 issues.map((issue: Issue) => {
                     return (
-                        <Card issue={issue}></Card>
+                        <Card key={issue.id} issue={issue}></Card>
                     )
                 })
             }
