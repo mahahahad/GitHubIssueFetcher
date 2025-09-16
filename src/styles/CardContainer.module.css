@@ -1,8 +1,12 @@
 .cardContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    width: clamp(10rem, 80vw, 100rem);
-    justify-content: center;
-    flex-grow: 6;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: clamp(10rem, 80vw, 100rem);
+  justify-content: center;
+  flex-grow: 6;
+}
+
+.cardContainer > * {
+  flex-grow: 1;
 }

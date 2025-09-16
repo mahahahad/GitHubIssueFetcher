@@ -3,10 +3,17 @@
   border-radius: var(--border-radius);
   padding: 1rem;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
-  width: clamp(20rem, 30vw, 40rem);
-  cursor: pointer;
+  width: 30vw;
+  height: calc(100vh - 4rem);
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
   /* For the pseudo-elements */
   position: relative;
+
+  /* ensure children can shrink properly and hide any accidental overflow */
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* Background */
@@ -15,7 +22,9 @@
   inset: 0;
   position: absolute;
   background-color: currentColor;
-  opacity: 5%;
+  filter: invert(1);
+  z-index: -1;
+  /* opacity: 5%; */
   border-radius: var(--border-radius);
   pointer-events: none;
 }
@@ -34,24 +43,59 @@
 }
 
 .card__title {
-  font-size: clamp(1rem, 4vmin, 1.75rem);
+  font-size: clamp(2rem, 4vmin, 2.5rem);
   margin-bottom: 0.5rem;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+}
+
+.card__bodyContainer {
+  --border-radius: 8px;
+  padding: 1rem;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* Background */
+.card__bodyContainer::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  background-color: currentColor;
+  opacity: 0.1;
+  inset: 0;
+  border-radius: var(--border-radius);
+  pointer-events: none;
 }
 
 .card__body {
-  font-size: clamp(0.85rem, 2vmin, 1rem);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
   font-family: var(--ff-mono);
-  line-clamp: 4;
+}
+
+.card__body * {
+  text-wrap: wrap;
+  font-family: inherit;
+}
+
+.card__body ul,
+.card__body ol {
+  padding-left: 2rem;
+}
+
+.card__buttonContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card__buttonContainer > * {
+  flex-grow: 1;
 }
 
 .label {

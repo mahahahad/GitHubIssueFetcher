@@ -1,31 +1,31 @@
 .filter {
-    --border-radius: 16px;
-    padding: 1rem;
-    flex-grow: 3;
-    border-radius: var(--border-radius);
-    position: relative;
+  --border-radius: 16px;
+  padding: 1rem;
+  flex-grow: 3;
+  border-radius: var(--border-radius);
+  position: relative;
 }
 
 /* Background */
 .filter::before {
-    content: "";
-    inset: 0;
-    position: absolute;
-    background-color: currentColor;
-    opacity: 5%;
-    border-radius: var(--border-radius);
-    pointer-events: none;
+  content: '';
+  inset: 0;
+  position: absolute;
+  background-color: currentColor;
+  opacity: 5%;
+  border-radius: var(--border-radius);
+  pointer-events: none;
 }
 
 /* Stroke */
 .filter::after {
-    content: "";
-    inset: 0;
-    position: absolute;
-    outline-offset: 2px;
-    outline: 1px solid currentColor;
-    opacity: 20%;
-    border-radius: var(--border-radius);
-    pointer-events: none;
-    /* Add mouse hover interaction to outline here */
+  content: '';
+  inset: 0;
+  position: absolute;
+  outline-offset: 2px;
+  outline: 1px solid currentColor;
+  opacity: 20%;
+  border-radius: var(--border-radius);
+  pointer-events: none;
+  /* Add mouse hover interaction to outline here */
 }

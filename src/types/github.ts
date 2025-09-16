@@ -10,6 +10,7 @@ export interface Issue {
     body: string;
     labels: Label[];
     url: string;
+    html_url: string;
     repository_url: string;
 }
 
