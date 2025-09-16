@@ -2,6 +2,7 @@ import styles from '@/styles/Card.module.css';
 import type { Issue, Repo } from '@/types/github';
 import type React from 'react';
 import { useEffect, useState } from 'react';
+import { FaCodeFork, FaStar } from 'react-icons/fa6';
 
 // Individual cards that will be used for mapping all issues and appended to the card conatiner
 function Card({
@@ -38,8 +39,13 @@ function Card({
       <div className={styles.card} onClick={handleClick}>
         <h1 className={styles.card__title}>{issue.title}</h1>
         <p>{repo?.full_name}</p>
-        <div className="detailContainer">
-          Stars: {repo?.stargazers_count}, Forks: {repo?.forks}
+        <div className={styles.detailContainer}>
+          <div className="stars">
+            <FaStar /> {repo?.stargazers_count}
+          </div>
+          <div className="forks">
+            <FaCodeFork /> {repo?.forks}
+          </div>
         </div>
         <div className={styles.card__labels}>
           <p className={styles.label}>{repo?.language}</p>

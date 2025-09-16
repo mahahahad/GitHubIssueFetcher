@@ -72,3 +72,15 @@
   overflow-y: hidden;
   padding-block: 0.5rem;
 }
+
+.detailContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.detailContainer > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
